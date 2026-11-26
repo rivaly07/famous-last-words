@@ -1,4 +1,4 @@
-"""Write one UTF-8 famous-last-words epitaph (1–150 characters) for the judge."""
+"""Write the final one-line epitaph (1–150 characters) for the judge."""
 
 import os
 from pathlib import Path
@@ -18,7 +18,7 @@ def output_directory() -> Path:
 
 def main() -> None:
     assert 1 <= len(EPITAPH) <= 150, "epitaph must be 1 to 150 characters"
-    assert "\n" not in EPITAPH and "\r" not in EPITAPH, "epitaph must be one line"
+    assert "\n" not in EPITAPH and "\r" not in EPITAPH, "final epitaph must be exactly one line"
     assert EPITAPH.strip(), "epitaph must not be only whitespace"
 
     destination = output_directory()
