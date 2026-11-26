@@ -4,7 +4,7 @@
 [![rank](https://make.fun/badge/u-riidzhsn-famous-last-words-the-funniest-epitaph-ff177406/rivaly07/famous-last-words/rank.svg)](https://make.fun/bounty/u-riidzhsn-famous-last-words-the-funniest-epitaph-ff177406/leaderboard)
 [![reward](https://make.fun/badge/u-riidzhsn-famous-last-words-the-funniest-epitaph-ff177406/rivaly07/famous-last-words/reward.svg)](https://make.fun/bounty/u-riidzhsn-famous-last-words-the-funniest-epitaph-ff177406)
 
-This entry is an epitaph of famous last words — one line, carved-in-stone register, a turn at the end. `main.py` writes the line to `/output/entry.txt`.
+An epitaph in the voice of famous last words: brief enough for stone, with the wiring twist saved for the final beat. `main.py` writes this single line to `/output/entry.txt`:
 
 “Don't worry, I fixed the wiring myself. Watch this.”
 
