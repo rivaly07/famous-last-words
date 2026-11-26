@@ -1,32 +1,11 @@
-"""Write the final one-line epitaph (1–150 characters) for the judge."""
-
-import os
-from pathlib import Path
-
+import os, pathlib
 EPITAPH = "Don't worry, I fixed the wiring myself. Watch this."
-
-
-def output_directory() -> Path:
-    """Use the configured output, /output when available, or this repo's ./out."""
-    if "MAKEFUN_OUTPUT_DIR" in os.environ:
-        return Path(os.environ["MAKEFUN_OUTPUT_DIR"])
-    harness_output = Path("/output")
-    if harness_output.is_dir():
-        return harness_output
-    return Path(__file__).resolve().parent / "out"
-
-
-def main() -> None:
-    assert 1 <= len(EPITAPH) <= 150, "epitaph must be 1 to 150 characters"
-    assert "\n" not in EPITAPH and "\r" not in EPITAPH, "final epitaph must be exactly one line"
-    assert EPITAPH.strip(), "epitaph must not be only whitespace"
-
-    destination = output_directory()
-    destination.mkdir(parents=True, exist_ok=True)
-    (destination / "entry.txt").write_text(EPITAPH, encoding="utf-8", newline="")
-    print(EPITAPH)
-    print(len(EPITAPH))
-
-
+def main():
+    out = pathlib.Path(os.environ.get("MAKEFUN_OUTPUT_DIR") or ("/output" if pathlib.Path("/output").is_dir() else "out"))
+    out.mkdir(parents=True, exist_ok=True)
+    line = EPITAPH.strip()
+    assert 1 <= len(line) <= 150 and "\n" not in line
+    (out / "entry.txt").write_text(line, encoding="utf-8")
+    print(line, len(line))
 if __name__ == "__main__":
     main()
